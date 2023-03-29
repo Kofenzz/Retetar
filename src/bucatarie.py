@@ -51,7 +51,7 @@ class Bucatarie():
             ingredients = dict(line.split(' : ') for line in lines)
             if adaugare_ingredient_nou in ingredients:
                 ingredients[adaugare_ingredient_nou] = int(ingredients[adaugare_ingredient_nou]) + cantitate_ingredient_nou
-                cantitate_ingredient_nou_total = int(ingredients[adaugare_ingredient_nou]) + cantitate_ingredient_nou
+                cantitate_ingredient_nou_total = int(ingredients[adaugare_ingredient_nou])
             else:
                 ingredients[adaugare_ingredient_nou] = cantitate_ingredient_nou
             dulap.seek(0)
