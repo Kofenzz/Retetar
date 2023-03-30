@@ -1,0 +1,10 @@
+# adaugarea tuturor fisierelor:
+git add .
+
+# comanda pentru a trimite fisierele adaugate sau modificate si adaugate
+
+git push
+
+# daca nu este definit un breanch ca main de multe ori ne sugereaza comanda mai jos
+
+git push --set-upstream origin main

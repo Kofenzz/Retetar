@@ -1,8 +1,8 @@
-faina : 400
+faina : 70
 zahar : 100
 sare : 100
 lapte : 100
 oua : 100
 unt : 100
 morcov : 20
-100 : 100
+x : 2

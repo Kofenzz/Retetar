@@ -18,25 +18,35 @@ def hello():
     bucatarie = b.Bucatarie("Bucatarie_1")
     while stadiu_raspuns == False:
         print("-----------------------------------------------")
-        raspuns = str(input('Alege o varianta: '))
+        raspuns = str(input('Alege o varianta: '))\
+        # Adaugi in inventar
         if raspuns =='A' or raspuns == 'a':
             message = bucatarie.adauga_inventar()
             print(message)
             time.sleep(1)
             print("-----------------------------------------------")
             print(s)
+        # Scazi din inventar
         elif raspuns == 'S' or raspuns == 's':
-            pass
+            message = bucatarie.scade_inventar()
+            print(message)
+            time.sleep(1)
+            print("-----------------------------------------------")
+            print(s)
+        # Verifici inventaru
         elif raspuns == 'V' or raspuns == 'v':
             print(f'Acesta este inventaru actual: {bucatarie.inventar}')
             time.sleep(1)
             print("-----------------------------------------------")
             print(s)
             continue
+        # Mergi la meniul retete
         elif raspuns == 'R' or raspuns == 'r':
             pass
+        # Iesi din program
         elif raspuns == 'X' or raspuns == 'x':
             break
+        # Verifica ca tasta trimisa sa fie una dintre optiunile acceptate
         elif raspuns not in accepted_responses:
             print('Alegeti din variantele prestabilite')
             continue
