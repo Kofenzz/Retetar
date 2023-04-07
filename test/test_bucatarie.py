@@ -1,8 +1,7 @@
-#test
-from src.bucatarie import *
-
-def test_scadere_inventar():
-    pass
-
-def test_adaugare_inventar():
-    pass
+# import os
+# def test_scadere_inventar():
+#     with open("",'w') as f:
+#
+#
+# def test_adaugare_inventar():
+#     pass

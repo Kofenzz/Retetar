@@ -1,8 +1,8 @@
-faina : 70
-zahar : 100
-sare : 100
-lapte : 100
-oua : 100
-unt : 100
-morcov : 20
-x : 2
+paste : 500
+parmegiano : 100
+oua : 3
+bacon : 250
+apa : 500
+faina : 1000
+faine : 200
+FAINA : 200
