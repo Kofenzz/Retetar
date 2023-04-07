@@ -3,15 +3,13 @@
     "id": "1",
     "nume": "Carbonara",
     "durata": "30 min",
-    "ingrediente": [
-      {
-        "paste": 500,
-        "parmegiano": 100,
-        "oua": 3,
-        "bacon": 250,
-        "apa": 500
-      }
-    ],
+    "ingrediente": {
+      "paste": 500,
+      "parmegiano": 100,
+      "oua": 3,
+      "bacon": 250,
+      "apa": 500
+    },
     "pasi": [
       "Incepe prin a fierbe pastele conform instructiunilor de pe pachet.",
       "Intr-o tigaie, prajeste baconul taiat bucatele pana devine crocant.",
@@ -25,18 +23,16 @@
     "id": "2",
     "nume": "Spaghetti Bolognese",
     "durata": "45 min",
-    "ingrediente": [
-      {
-        "spaghetti": 500,
-        "carne tocata": 500,
-        "ceapa": 1,
-        "usturoi": 2,
-        "rosii": 400,
-        "sare": "dupa gust",
-        "piper": "dupa gust",
-        "ulei": "2 linguri"
-      }
-      ],
+    "ingrediente": {
+      "spaghetti": 500,
+      "carne tocata": 500,
+      "ceapa": 1,
+      "usturoi": 2,
+      "rosii": 400,
+      "sare": "dupa gust",
+      "piper": "dupa gust",
+      "ulei": "2 linguri"
+    },
     "pasi": [
       "Intr-o oala mare, pune la fiert apa cu sare pentru a gati pastele.",
       "Intr-o tigaie, incinge uleiul si prajeste ceapa si usturoiul pana se inmoaie.",
@@ -50,16 +46,14 @@
   "id": "3",
   "nume": "Salata Caesar",
   "durata": "20 min",
-  "ingrediente": [
-      {
-        "piept de pui": 2,
-        "salata verde": 1,
-        "rosii cherry": 200,
-        "crutoane": 50,
-        "parmezan": 100,
-        "sos Caesar": 4
-      }
-    ],
+  "ingrediente": {
+    "piept de pui": 2,
+    "salata verde": 1,
+    "rosii cherry": 200,
+    "crutoane": 50,
+    "parmezan": 100,
+    "sos Caesar": 4
+  },
   "pasi": [
   "Intr-o tigaie, prajeste pieptul de pui pana se rumeneste bine.",
   "Spala salata si rupe-o in bucati mai mici.",

@@ -43,6 +43,8 @@ def meniu_principal():
         # Mergi la meniul retete
         elif raspuns == 'R' or raspuns == 'r':
             meniu_reteta()
+            time.sleep(1)
+            print("-----------------------------------------------")
 
         # Iesi din program
         elif raspuns == 'X' or raspuns == 'x':
@@ -77,6 +79,9 @@ def meniu_reteta():
             continue
         elif reteta_input == 'S' or reteta_input == 's':
             reteta.selectare_reteta()
+            time.sleep(1)
+            print("-----------------------------------------------")
+            print(text_meniu_reteta)
         elif reteta_input == 'I' or reteta_input == 'i':
             meniu_principal()
             break

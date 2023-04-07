@@ -49,6 +49,42 @@ class Reteta():
         for ingredient, cantitate in reteta_selectata['ingrediente'].items():
             if ingredient not in dulap_dict or dulap_dict[ingredient] < cantitate:
                 print("Nu aveti destule ingrediente")
-                return
+                return None
 
-        print(f"Aveti suficiente ingrediente pentru reteta {reteta_selectata['nume']}")
+        print(f"Aveti suficiente ingrediente pentru {reteta_selectata['nume']}")
+
+        # Optiune de afisare intructiuni sau revenire la meniu
+
+        while True:
+            optiune = input(f"Doriti sa reveniti la meniu sau sa vedeti reteta {reteta_selectata['nume']}\n Pentru meniu tastati 'm'\n Pentru a vedea {reteta_selectata['nume']} tastati v\n")
+            if optiune == 'm' or optiune == 'M':
+                return
+            elif optiune == 'v' or optiune == 'V':
+                print(f"Reteta selectata este: {reteta_selectata['nume']}")
+                print(f"Ingrediente: \n")
+                for i, (nume, cantitate) in enumerate(reteta_selectata['ingrediente'].items()):
+                    print(f"{i + 1}. {nume} : {cantitate}\n")
+                print(f"Mod de preparare: \n")
+                for i, step in enumerate(reteta_selectata['pasi']):
+                    print(f"{i + 1}. {step}\n")
+            else:
+                print("Te rog sa introduci o optine valida")
+                continue
+
+    def adaugare_reteta(self):
+        print(s)
+
+    def stergere_reteta(self):
+        pass
+
+    # def informatii_reteta(self, reteta_selectata):
+    #     if reteta_selectata is None:
+    #         print("Nu s-a selectat o reteta")
+    #     else:
+    #         print(f"Reteta selectata este: {reteta_selectata['nume']}")
+    #         print(f"Ingrediente: ")
+    #         for i, step in enumerate(reteta_selectata['ingrediente']):
+    #             print(f"{i+1}. {step}\n")
+    #         print(f"Mod de preparare: ")
+    #         for i, step in enumerate(reteta_selectata['mod_de_preparare']):
+    #             print(f"{i+1}. {step}\n")

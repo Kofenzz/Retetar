@@ -3,6 +3,4 @@ parmegiano : 100
 oua : 3
 bacon : 250
 apa : 500
-faina : 1000
-faine : 200
-FAINA : 200
+faina : 1200

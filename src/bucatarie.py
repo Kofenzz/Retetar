@@ -27,7 +27,7 @@ class Bucatarie():
             print("Ce vrei sa produs vrei sa scazi ?")
             while True:
                 nefiltrat_scadere_ingredient_nou = str(input())
-                scadere_ingredient_nou = nefiltrat_scadere_ingredient_nou.lower
+                scadere_ingredient_nou = nefiltrat_scadere_ingredient_nou.lower()
                 try:
                     float(scadere_ingredient_nou)
                     print("Va rog puneti un ingredient valid")
