@@ -139,3 +139,4 @@ class Reteta():
         self.salveaza_reteta()
 
         print(f'Reteta cu ID-ul {next_id} si cu numele: {nume} a fost adaugata cu succes')
+        return nume
