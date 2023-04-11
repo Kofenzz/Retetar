@@ -1,9 +1,11 @@
 import json
-# import bucatarie
+
+
 class Reteta():
 
-    def __init__(self,):
-        self.lista = {}
+    def __init__(self,file_path = "data\lista_retete.json"):
+        self.file_path = file_path
+        self.recipes = self.incarca_reteta()
 
     def lista_retete(self):
 
@@ -47,7 +49,7 @@ class Reteta():
         # Verificam daca in dulap sunt ingrediente suficiente
 
         for ingredient, cantitate in reteta_selectata['ingrediente'].items():
-            if ingredient not in dulap_dict or dulap_dict[ingredient] < cantitate:
+            if ingredient not in dulap_dict or dulap_dict[ingredient] < int(cantitate):
                 print("Nu aveti destule ingrediente")
                 return None
 
@@ -56,7 +58,7 @@ class Reteta():
         # Optiune de afisare intructiuni sau revenire la meniu
 
         while True:
-            optiune = input(f"Doriti sa reveniti la meniu sau sa vedeti reteta {reteta_selectata['nume']}\n Pentru meniu tastati 'm'\n Pentru a vedea {reteta_selectata['nume']} tastati v\n")
+            optiune = input(f"Doriti sa reveniti la meniu sau sa vedeti reteta {reteta_selectata['nume']}\n Pentru a vedea {reteta_selectata['nume']} tastati 'V'\n Pentru meniu tastati 'M'\n")
             if optiune == 'm' or optiune == 'M':
                 return
             elif optiune == 'v' or optiune == 'V':
@@ -71,20 +73,69 @@ class Reteta():
                 print("Te rog sa introduci o optine valida")
                 continue
 
+    def incarca_reteta(self):
+        """ Incarcam lista curenta pentru a o pune intr-un dicitonar
+        Returneaza:
+
+        - dictionar: Contine retetele curente
+        """
+        with open(self.file_path, "r") as f:
+            recipes = json.load(f)
+        return recipes
+
+    def salveaza_reteta(self):
+        """
+        Salveaza reteta curenta
+        """
+        with open(self.file_path,'w') as f:
+            json.dump(self.recipes, f, indent=4)
+
     def adaugare_reteta(self):
-        print(s)
+        """
+        Adauga reteta noua in dictionar
 
-    def stergere_reteta(self):
-        pass
+        Args:
+        - nume (str): Numele retetei
+        - durata (str): Durata de retetei
+        - ingrediente (dict): Un dicitonar ce contine toate ingredientele retetei
+        - pasi (list): O lista de pasi pentru a face reteta
+        """
 
-    # def informatii_reteta(self, reteta_selectata):
-    #     if reteta_selectata is None:
-    #         print("Nu s-a selectat o reteta")
-    #     else:
-    #         print(f"Reteta selectata este: {reteta_selectata['nume']}")
-    #         print(f"Ingrediente: ")
-    #         for i, step in enumerate(reteta_selectata['ingrediente']):
-    #             print(f"{i+1}. {step}\n")
-    #         print(f"Mod de preparare: ")
-    #         for i, step in enumerate(reteta_selectata['mod_de_preparare']):
-    #             print(f"{i+1}. {step}\n")
+        # Luam informatiile pentru reteta noua
+
+        nume = input("Introduceti numele retetei (trebuie sa contina litere):  ")
+        durata = input("Introduce durata retetei (trebuie sa contina numere): ")
+        ingrediente = {}
+        while True:
+            ingrediente_nume = input("Introduceti numele ingredientului (sau 'q' pentru a iesi): ")
+            if ingrediente_nume == 'q':
+                break
+            ingrediente_cantitate = input("Introduceti cantitatea ingredientului: ")
+            ingrediente[ingrediente_nume] = ingrediente_cantitate
+        pasi = []
+        while True:
+            pas = input("Introduceti un pas pentru reteta (sau 'q' pentru a iesi): ")
+            if pas == 'q':
+                break
+            pasi.append(pas)
+
+        # Verificam care este urmatorul ID disponibil
+        available_ids = [int(recipe_id) for recipe_id in self.recipes.keys()]
+        next_id = str(max(available_ids) + 1) if available_ids else "1"
+
+        # Creearea dictionarului care reprezinta noua reteta
+
+        reteta_noua = {
+            "id": next_id,
+            "nume": nume,
+            "durata":durata,
+            "ingrediente":ingrediente,
+            "pasi":pasi
+        }
+
+        # Adaugam reteta noua la dictionar cu ID ul nou ca si cheie
+
+        self.recipes[next_id] = reteta_noua
+        self.salveaza_reteta()
+
+        print(f'Reteta cu ID-ul {next_id} si cu numele: {nume} a fost adaugata cu succes')

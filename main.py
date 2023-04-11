@@ -24,21 +24,17 @@ def meniu_principal():
             print(message)
             time.sleep(1)
             print("-----------------------------------------------")
-            # print(text_meniu)
         # Scazi din inventar
         elif raspuns == 'S' or raspuns == 's':
             message = bucatarie.scade_inventar()
             print(message)
             time.sleep(1)
             print("-----------------------------------------------")
-            # print(text_meniu)
         # Verifici inventaru
         elif raspuns == 'V' or raspuns == 'v':
-            # print(f'Acesta este inventaru actual: {bucatarie.inventar}')
             bucatarie.verifica_inventar()
             time.sleep(1)
             print("-----------------------------------------------")
-            # print(text_meniu)
             continue
         # Mergi la meniul retete
         elif raspuns == 'R' or raspuns == 'r':
@@ -64,6 +60,7 @@ def meniu_reteta():
         Pentru a vedea lista de retete tasteaza 'L'
         Pentru a selecta o reteta tasteaza 'S'
         Pentru a te intoarce la meniul initial tasteaza 'I'
+        Pentru a adauga o reteta tastati 'A'
         Pentru a iesi din program tastati 'X'"""
     print(text_meniu_reteta)
     print("Ce doresti sa faci?")
@@ -82,11 +79,16 @@ def meniu_reteta():
             time.sleep(1)
             print("-----------------------------------------------")
             print(text_meniu_reteta)
+        elif reteta_input == 'A' or reteta_input == 'a':
+            reteta.adaugare_reteta()
+            time.sleep(1)
+            print("-----------------------------------------------")
+            print(text_meniu_reteta)
         elif reteta_input == 'I' or reteta_input == 'i':
             meniu_principal()
             break
         elif reteta_input == 'X' or reteta_input == 'x':
-            print("La Revedere !")
+            print("Ne Intoarcem la meniul principal !")
             break
         elif reteta_input not in accepted_responses_retete:
             print('Alegeti din variantele prestabilite')

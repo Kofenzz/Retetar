@@ -1,6 +1,10 @@
 paste : 500
 parmegiano : 100
 oua : 3
-bacon : 250
+bacon : 50
 apa : 500
-faina : 1200
+faina : 1198
+iaurt : 50
+ulei : 20
+sare : 5
+piper : 5
