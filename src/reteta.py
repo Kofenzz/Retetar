@@ -14,6 +14,7 @@ class Reteta():
             nume_retete = [retete_lista[id]['nume'] for id in retete_lista]
             mesaj_retete = nume_retete
             return mesaj_retete
+
     def selectare_reteta(self):
         # Incarcam ingredientele din dulap intr-un dictionar
 
