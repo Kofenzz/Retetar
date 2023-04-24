@@ -2,7 +2,11 @@ import time
 from src import bucatarie as b
 from src import reteta as r
 
+def main():
+    create_gui()
 
+if __name__ == '__main__':
+    main()
 def meniu_principal():
     print("Ce doresti sa faci astazi ?")
     accepted_responses = ['A', 'S', 'V', 'R', 'X']

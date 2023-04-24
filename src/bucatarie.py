@@ -1,5 +1,3 @@
-import pickle
-
 class Bucatarie():
 
     def __init__(self, nume):
