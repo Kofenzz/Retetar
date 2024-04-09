@@ -101,6 +101,7 @@ class Bucatarie():
 
     def verifica_inventar(self):
         with open("data/dulap.txt", "r") as dulap:
+            # dulap.seek(5)
             lines = dulap.readlines()
             for line in lines:
                 if ':' in line:

@@ -3,7 +3,7 @@ parmegiano : 100
 oua : 3
 bacon : 50
 apa : 500
-faina : 1198
+faina : 1368
 iaurt : 50
 ulei : 20
 sare : 5
